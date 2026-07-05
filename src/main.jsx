@@ -5,6 +5,8 @@ import { Login } from './pages/login.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Login />
+    <div className="login-page">
+      <Login />
+    </div>
   </StrictMode>
 );
