@@ -1,29 +1,49 @@
 import google from '../assets/google.svg';
 import facebook from '../assets/facebook.svg';
+import './login.css';
 
 export const Login = () => {
   return (
     <div className="card">
-      <div className="hero"></div>
+      <div className="hero">{/* wave animation code on github */}</div>
+
       <form className="form">
         <h3>Login to your account</h3>
-        <div className="social">
-          <button type="button" className="social-btn">
-            <img src={google} alt="Google" />
-            <p>
-              <span className="extra-text">Login with Google</span>
-            </p>
+
+        <div className="socials">
+          <button
+            type="button"
+            className="social-btn"
+            aria-label="Login with Google"
+          >
+            <img src={google} alt="" aria-hidden="true" />
+            <span className="social-text">
+              Google<span className="extra-text"> login</span>
+            </span>
           </button>
-          <button type="button" className="social-btn">
-            <img src={facebook} alt="Facebook" />
-            <p>
-              <span className="extra-text">Login with Facebook</span>
-            </p>
+
+          <button
+            type="button"
+            className="social-btn"
+            aria-label="Login with Facebook"
+          >
+            <img src={facebook} alt="" aria-hidden="true" />
+            <span className="social-text">
+              Facebook<span className="extra-text"> login</span>
+            </span>
           </button>
         </div>
-        <span className="extra-text">or</span>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+
+        <div className="or"></div>
+
+        <input type="email" placeholder="Email" aria-label="Email" required />
+        <input
+          type="password"
+          placeholder="Password"
+          aria-label="Password"
+          required
+        />
+
         <button type="submit">Login</button>
       </form>
     </div>

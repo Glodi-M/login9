@@ -1,0 +1,181 @@
+/* src/pages/login.css */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
+    padding: 8px;
+    width: clamp(300px, 85vw, 500px);
+    box-sizing: border-box;
+    height: 100%;
+
+}
+
+.hero, .form {
+    flex: 1 1 50%;
+}
+
+.card :is(h3, p, span) {
+    font-weight: 500;
+    margin: 0;
+}
+
+.hero {
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    min-height: 200px;
+    background: radial-gradient(ellipse at center, #eaf5fd 0%, #cfe7fa 45%, #55acee 100%);
+}
+
+.form {
+    padding: 30px 18px;
+    /* Correction du 3Opx (lettre) en 30px (chiffre) */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form>h3 {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+:is(button, input) {
+    height: 52px;
+    border-radius: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+input {
+    border: 1px solid #eef2f5;
+    background: #f7f9fa;
+    padding: 0 16px;
+    color: #333;
+}
+
+input:focus {
+    outline: none;
+    border-color: #55acee;
+    background: #fff;
+}
+
+input::placeholder {
+    color: #a3a3a3;
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+}
+
+.extra-text {
+    display: none;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    cursor: pointer;
+    color: #4a5568;
+}
+
+.social-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.social-btn>img {
+    /* Correction du caractère spécial › */
+    height: 22px;
+    width: 22px;
+}
+
+.form>button[type="submit"] {
+    color: #f9f9f9;
+    border: 0;
+    background: #1a1a1a;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.form>button[type="submit"]:hover {
+    background: #333;
+}
+
+/* Style du séparateur "Or" */
+.or {
+    position: relative;
+    text-align: center;
+    height: 20px;
+    margin: 8px 0;
+}
+
+.or::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-50%);
+}
+
+.or::after {
+    content: "or";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    font-size: 14px;
+    color: #a3a3a3;
+    padding: 0 12px;
+    text-transform: lowercase;
+}
+
+/* Media Queries Responsive */
+@media (width >=485px) {
+    .card {
+        width: clamp(300px, 90vw, 740px);
+    }
+
+    .form {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .extra-text {
+        display: inline;
+    }
+}
+
+@media (width >=640px) {
+    .card {
+        padding: 8px;
+        flex-direction: row;
+    }
+
+    .hero {
+        min-height: auto;
+        /* Permet au bloc hero de prendre toute la hauteur en mode row */
+    }
+
+    .form {
+        padding: 40px;
+    }
+}
